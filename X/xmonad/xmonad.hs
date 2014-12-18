@@ -39,7 +39,7 @@ import Data.Ratio ((%))
   simpler parts of xmonad's behavior and are straightforward to tweak.
 -}
 
-altMask		     = mod1Mask
+altMask              = mod1Mask       -- altKey
 myModMask            = mod4Mask       -- changes the mod key to "super"
 myFocusedBorderColor = "#000000"      -- color of focused border
 myNormalBorderColor  = "#000000"      -- color of inactive border
@@ -87,15 +87,11 @@ myUrgentWSRight = "}"
 
 myWorkspaces =
   [
---    "7:Chat",  "8:Dbg", "9:Pix",
---    "4:Docs",  "5:Dev", "6:Web",
---    "1:Term",  "2:Remote", "3:Mail",
---    "0:VM",    "Extr1", "Extr2"
       "0:Dev",   "1:Web", "2:Mail",
       "3:Extr"
   ]
 
-startupWorkspace = "5:Dev"  -- which workspace do you want to be on after launch?
+startupWorkspace = "0:Dev"  -- which workspace do you want to be on after launch?
 
 {-
   Layout configuration. In this section we identify which xmonad
