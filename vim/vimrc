@@ -1,0 +1,139 @@
+" Pathogen
+execute pathogen#infect()
+
+syntax on
+
+" vim-latex
+filetype plugin on
+" IMPORTANT: grep will sometimes skip displaying the file name if you
+" search in a singe file. This will confuse Latex-Suite. Set your grep
+" program to always generate a file-name.
+set grepprg=grep\ -nH\ $*
+" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
+" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
+" The following changes the default filetype back to 'tex':
+let g:tex_flavor='latex'
+
+autocmd Filetype tex setlocal sw=2 iskeyword+=: textwidth=72
+" end vim-latex
+
+
+set nu
+" set columns=80
+set textwidth=79
+set colorcolumn=85
+" indentation
+"set cindent
+"set autoindent
+"set smartindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+filetype plugin indent on
+autocmd FileType make,GNUmakefile,*.mk setlocal noexpandtab
+autocmd FileType sh setlocal expandtab sw=2 sts=2 ts=2 smarttab 
+autocmd BufRead,BufNewFile *.C,*.H,*.hpp,*.h,*.c,*.cpp set ai ts=4 sw=4 sts=4 et
+
+
+" affiche caractères
+highlight Tab ctermbg=darkgray guibg=darkgray
+au BufWinEnter * let w:m2=matchadd('Tab', '\t', -1)
+"set list listchars=tab:» ,trail:·,nbsp:×
+set list listchars=tab:>-,trail:·,nbsp:×
+"highlight tab ctermfg=red guifg=red
+highlight NonText ctermfg=red guifg=gray
+
+" Améliore l'affichage en disant à vim que nous utilisons un terminal rapide
+set ttyfast
+
+
+" keys for vim and tmux
+if &term =~ '^screen' && exists('$TMUX')
+    set mouse+=a
+    " tmux knows the extended mouse mode
+    set ttymouse=xterm2
+    " tmux will send xterm-style keys when xterm-keys is on
+    execute "set <xUp>=\e[1;*A"
+    execute "set <xDown>=\e[1;*B"
+    execute "set <xRight>=\e[1;*C"
+    execute "set <xLeft>=\e[1;*D"
+    execute "set <xHome>=\e[1;*H"
+    execute "set <xEnd>=\e[1;*F"
+    execute "set <Insert>=\e[2;*~"
+    execute "set <Delete>=\e[3;*~"
+    execute "set <PageUp>=\e[5;*~"
+    execute "set <PageDown>=\e[6;*~"
+    execute "set <xF1>=\e[1;*P"
+    execute "set <xF2>=\e[1;*Q"
+    execute "set <xF3>=\e[1;*R"
+    execute "set <xF4>=\e[1;*S"
+    execute "set <F5>=\e[15;*~"
+    execute "set <F6>=\e[17;*~"
+    execute "set <F7>=\e[18;*~"
+    execute "set <F8>=\e[19;*~"
+    execute "set <F9>=\e[20;*~"
+    execute "set <F10>=\e[21;*~"
+    execute "set <F11>=\e[23;*~"
+    execute "set <F12>=\e[24;*~"
+endif
+
+" NERDTree, file explorer
+nmap <F6> :NERDTreeToggle<CR>
+
+" taglist plugin, acode source browser
+nmap <F8> :TlistToggle<CR>
+filetype on
+filetype plugin on
+let Tlist_Ctags_Cmd = '/usr/bin/ctags'
+let Tlist_Inc_Winwidth = 0
+" Fermer Vim s'il ne reste que Tlist
+let Tlist_Exit_OnlyWindow = 1
+
+" La panneau gagne le focus dès qu'il est ouvert
+let Tlist_GainFocus_On_ToggleOpen = 1
+
+" Mettre à jour automatiquement quand un fichier est en édition
+let Tlist_Auto_Update = 1
+
+" Largeur du panneau
+let Tlist_WinWidth = 30
+
+" Afficher dans le menu
+let Tlist_Show_Menu = 1
+let Tlist_Compact_Format = 1
+let Tlist_Close_On_Select = 1
+let Tlist_Enable_Fold_Column = 0
+let Tlist_Show_Menu = 0
+
+
+" Replie automatiquement les fichiers inactifs
+let Tlist_File_Fold_Auto_Close = 1
+
+" color scheme
+set background=dark
+let g:solarized_termcolors=256
+colorscheme solarized
+
+" Paste Mode On/Off
+" http://www.vim.org/tips/tip.php?tip_id=330
+map <F10> :call Paste_on_off()<CR>
+set pastetoggle=<F10>
+
+let paste_mode = 0 " 0 = normal, 1 = paste
+
+func! Paste_on_off()
+  if g:paste_mode == 0
+    set paste
+    let g:paste_mode = 1
+  else
+    set nopaste
+    let g:paste_mode = 0
+  endif
+  return
+endfunc
+
+" plugins
+" closetag.vim
+" vim-autoclose
+" delimitMate

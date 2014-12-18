@@ -1,0 +1,7 @@
+xenvironment=$HOME/.Xresources
+
+if [ -f $xenvironment ]; then
+  xrdb -merge "$xenvironment"
+fi
+
+exec xmonad

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+CONFIG_DIR="~/.bash"
+
+# reload conf alias, may be overwritten
+alias reload='source ~/.bash_profile'
+
+
+if [ -f "$CONFIG_DIR/bash_exports" ]; then
+  . "$CONFIG_DIR/bash_exports"
+fi
+
+
+if [ -f "$CONFIG_DIR/bash_aliases" ]; then
+  . "$CONFIG_DIR/bash_aliases"
+fi
+
+if [ -f "$CONFIG_DIR/bash_functions" ]; then
+  . "$CONFIG_DIR/bash_functions"
+fi
+
+# theming

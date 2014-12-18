@@ -1,0 +1,7 @@
+# terms looks better with 256 colors enabled
+export TERM="xterm-256color"
+
+# Editors
+export EDITOR=/usr/bin/vim
+export GIT_EDITOR=/usr/bin/vim
+

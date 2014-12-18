@@ -1,0 +1,40 @@
+[submodule "vim/bundle/tpope-vim-pathogen"]
+    path = vim/bundle/tpope-vim-pathogen
+    url  = https://github.com/tpope/vim-pathogen.git
+
+[submodule "vim/bundle/scrooloose-nerdtree"]
+    path = vim/bundle/scroolose-nerdtree
+    url  = https://github.com/scrooloose/nerdtree.git
+
+[submodule "vim/bundle/kevinw-pyflakes-vim"]
+    path = vim/bundle/kevinw-pyflakes-vim
+    url  = https://github.com/kevinw/pyflakes-vim.git
+
+[submodule "vim/bundle/ervandew-supertab"]
+    path = vim/bundle/ervandew-supertab
+    url  = https://github.com/ervandew/supertab.git
+
+[submodule "vim/bundle/altercation-vim-colors-solarized"]
+    path = vim/bundle/altercation-vim-colors-solarized
+    url  = https://github.com/altercation/vim-colors-solarized.git
+
+[submodule "vim/bundle/jamessan-vim-gnupg"]
+    path = vim/bundle/jamessan-vim-gnupg
+    url  = https://github.com/jamessan/vim-gnupg.git
+
+[submodule "vim/bundle/Raimondi-delimitMate"]
+    path = vim/bundle/Raimondi-delimitMate
+    url  = https://github.com/Raimondi/delimitMate.git
+
+[submodule "vim/bundle/gerw-vim-latex-suite"]
+    path = vim/bundle/gerw-vim-latex-suite
+    url  = https://github.com/gerw/vim-latex-suite.git
+
+[submodule "vim/bundle/vim-scripts-taglist"]
+    path = vim/bundle/vim-scripts-taglist
+    url  = https://github.com/vim-scripts/taglist.git
+
+[submodule "vim/bundle/vim-scripts-Super-Shell-Indent"]
+    path = vim/bundle/vim-scripts-Super-Shell-Indent
+    url  = https://github.com/vim-scripts/Super-Shell-Indent.git
+

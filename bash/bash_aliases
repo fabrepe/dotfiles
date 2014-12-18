@@ -1,0 +1,10 @@
+alias hg='history | grep'
+
+#alias ll='ls -al'
+alias psg='ps -edf | grep'
+
+
+# tmux
+alias tmux='tmux -2'
+alias tmux-resurect='bash ~/bin/tmux-resurrect -r'
+alias tmux-backup='bash ~/bin/tmux-resurrect -b'

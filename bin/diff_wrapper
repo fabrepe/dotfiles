@@ -1,0 +1,23 @@
+#!/bin/sh
+# Use vimdiff to view git diffs
+#
+# Wrapper scrupt for vimdiff to be called by git diff when using external diff.
+
+vimdiff="/usr/bin/vimdiff"
+
+case "$1" in
+  git)
+    echo git
+    echo $2
+    echo $5
+    $vimdiff "$2" "$5"
+    ;;
+  svn)
+    echo svn
+    echo $6
+    echo $7
+    $vimdiff "$6" "$7"
+    ;;
+  *)
+    echo "Error: invalid cvs name: $1"
+esac

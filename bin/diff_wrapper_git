@@ -1,0 +1,8 @@
+#!/bin/sh
+# Use vimdiff to view git diffs
+#
+# Wrapper scrupt for vimdiff to be called by git diff when using external diff.
+
+vimdiff="/usr/bin/vimdiff"
+
+$vimdiff "$2" "$5"
