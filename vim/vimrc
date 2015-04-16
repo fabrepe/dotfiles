@@ -20,7 +20,7 @@ autocmd Filetype tex setlocal sw=2 iskeyword+=: textwidth=72
 
 set nu
 " set columns=80
-set textwidth=79
+set textwidth=80
 set colorcolumn=85
 " indentation
 "set cindent
@@ -79,10 +79,10 @@ if &term =~ '^screen' && exists('$TMUX')
 endif
 
 " NERDTree, file explorer
-nmap <F6> :NERDTreeToggle<CR>
+nmap <F2> :NERDTreeToggle<CR>
 
 " taglist plugin, acode source browser
-nmap <F8> :TlistToggle<CR>
+nmap <F3> :TlistToggle<CR>
 filetype on
 filetype plugin on
 let Tlist_Ctags_Cmd = '/usr/bin/ctags'
@@ -106,12 +106,12 @@ let Tlist_Close_On_Select = 1
 let Tlist_Enable_Fold_Column = 0
 let Tlist_Show_Menu = 0
 
-
 " Replie automatiquement les fichiers inactifs
 let Tlist_File_Fold_Auto_Close = 1
 
 " color scheme
 set background=dark
+set t_Co=256
 let g:solarized_termcolors=256
 colorscheme solarized
 
@@ -133,7 +133,9 @@ func! Paste_on_off()
   return
 endfunc
 
-" plugins
-" closetag.vim
-" vim-autoclose
-" delimitMate
+" CloseTag: Intelligently close HTML tags
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+
+" SuperTab: Word completion on steroids
+let g:SuperTabDefaultCompletionType = "context"
