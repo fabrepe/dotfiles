@@ -8,3 +8,8 @@ alias psg='ps -edf | grep'
 alias tmux='tmux -2'
 alias tmux-resurect='bash ~/bin/tmux-resurrect -r'
 alias tmux-backup='bash ~/bin/tmux-resurrect -b'
+
+
+# type errors
+alias vmi='vim'
+alias vum='vim'

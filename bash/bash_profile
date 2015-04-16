@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-CONFIG_DIR="~/.bash"
+#CONFIG_DIR="~/.bash"
+CONFIG_DIR="$(dirname ${BASH_SOURCE[0]})/"
 
 # reload conf alias, may be overwritten
 alias reload='source ~/.bash_profile'
@@ -20,3 +21,8 @@ if [ -f "$CONFIG_DIR/bash_functions" ]; then
 fi
 
 # theming
+if [ -f "$CONFIG_DIR/theme.sh" ]; then
+  . "$CONFIG_DIR/theme.sh"
+fi
+
+$PROMPT_COMMAND
